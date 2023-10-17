@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Salesforce Accounts</title>
+  </head>
+  <body>
+    <h1>Salesforce Accounts</h1>
+    <ul>
+      {% for account in accounts %}
+      <li>
+        {{ account.Name }} {{account.AnnualRevenue}}
+        {{account.NumberOfEmployees}}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
