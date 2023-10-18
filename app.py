@@ -31,7 +31,7 @@ loaded_model = load('wines_model.joblib')
 @app.route('/')  
 def list_wines():
     # Query Salesforce for a list of wines
-    query = "SELECT Id, Name,alcohol__c,chlorides__c,citric_acid__c,density__c,fixed_acidity__c,free_sulfur_dioxide__c,pH__c,residual_sugar__c,sulphates__c,total_sulfur_dioxide__c,volatile_acidity__c	FROM Wines__c order by Name"
+    query = "SELECT Id, Name,alcohol__c,chlorides__c,citric_acid__c,density__c,fixed_acidity__c,free_sulfur_dioxide__c,pH__c,residual_sugar__c,sulphates__c,total_sulfur_dioxide__c,volatile_acidity__c,quality__c FROM Wines__c order by Name"
     wines = sf.query_all(query)['records']
 
     return render_template('wine.html', wines=wines)
@@ -40,20 +40,20 @@ def list_wines():
 
 def predict_wines():
     data=request.get_json()
-    fa=(data.get('fa'))
-    va=(data.get('va'))
-    ca=(data.get('ca'))
-    rs=(data.get('rs'))
-    ch=(data.get('ch'))
-    fsd=(data.get('fsd'))
-    tsd=(data.get('tsd'))
-    d=(data.get('d'))
-    ph=(data.get('ph'))
-    sp=(data.get('sp'))
-    al=(data.get('al'))
+    fixed_acidity__c=(data.get('fixed_acidity__c'))
+    volatile_acidity__c=(data.get('volatile_acidity__c'))
+    citric_acid__c=(data.get('citric_acid__c'))
+    residual_sugar__c=(data.get('residual_sugar__c'))
+    chlorides__c=(data.get('chlorides__c'))
+    free_sulfur_dioxide__c=(data.get('free_sulfur_dioxide__c'))
+    total_sulfur_dioxide__c=(data.get('total_sulfur_dioxide__c'))
+    density__c=(data.get('density__c'))
+    pH__c=(data.get('pH__c'))
+    sulphates__c=(data.get('sulphates__c'))
+    alcohol__c=(data.get('alcohol__c'))
 
     #input_data = (6.6,0.32,0.44,2.4,0.061,24.0,34.0,0.9978,3.35,0.8,11.6)
-    input_data = (fa,va,ca,rs,ch,fsd,tsd,d,ph,sp,al)
+    input_data = (fixed_acidity__c,volatile_acidity__c,citric_acid__c,residual_sugar__c,chlorides__c,free_sulfur_dioxide__c,total_sulfur_dioxide__c,density__c,pH__c,sulphates__c,alcohol__c)
 
     # changing the input data to a numpy array
     input_data_as_numpy_array = np.asarray(input_data)

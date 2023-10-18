@@ -21,34 +21,36 @@
     <table>
       <tr>
         <th>Name</th>
-        <th>Alcohol%</th>
-        <th>Chlorides</th>
-        <th>Citric Acid</th>
-        <th>Density</th>
         <th>Fixed Acidity</th>
-        <th>Free S02</th>
-        <th>pH</th>
-        <th>Resid. Sugar</th>
-        <th>Sulphates</th>
-        <th>Total S02</th>
         <th>Vol Acidity</th>
+        <th>Citric Acid</th>
+        <th>Resid. Sugar</th>
+        <th>Chlorides</th>
+        <th>Free S02</th>
+        <th>Total S02</th>
+        <th>Density</th>
+        <th>pH</th>
+        <th>Sulphates</th>
+        <th>Alcohol%</th>
+        <th>Quality</th>
 
         {% for wine in wines %}
       </tr>
 
       <tr>
-        <td>{{wine.Name }}</td>
-        <td>{{wine.alcohol__c}}</td>
-        <td>{{wine.chlorides__c}}</td>
-        <td>{{wine.citric_acid__c}}</td>
-        <td>{{wine.density__c}}</td>
+        <td>{{wine.Name}}</td>
         <td>{{wine.fixed_acidity__c}}</td>
-        <td>{{wine.free_sulfur_dioxide__c}}</td>
-        <td>{{wine.pH__c}}</td>
-        <td>{{wine.residual_sugar__c}}</td>
-        <td>{{wine.sulphates__c}}</td>
-        <td>{{wine.total_sulfur_dioxide__c}}</td>
         <td>{{wine.volatile_acidity__c}}</td>
+        <td>{{wine.citric_acid__c}}</td>
+        <td>{{wine.residual_sugar__c}}</td>
+        <td>{{wine.chlorides__c}}</td>
+        <td>{{wine.free_sulfur_dioxide__c}}</td>
+        <td>{{wine.total_sulfur_dioxide__c}}</td>
+        <td>{{wine.density__c}}</td>
+        <td>{{wine.pH__c}}</td>
+        <td>{{wine.sulphates__c}}</td>
+        <td>{{wine.alcohol__c}}</td>
+        <td>{{wine.quality__c}}</td>
       </tr>
       {% endfor %}
     </table>
