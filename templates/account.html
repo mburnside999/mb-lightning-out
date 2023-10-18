@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
     <title>Salesforce Accounts</title>
   </head>
   <body>
-    <h1>Salesforce Accounts</h1>
     <h1>Salesforce Accounts</h1>
     <!-- <ul>
       {% for account in accounts %}
@@ -15,14 +19,18 @@
       {% endfor %}
     </ul> -->
     <table>
-     <tr><th>Account Name</th><th>AnnualRev</th><th>No of Employees</th></tr>
+      <tr>
+        <th>Account Name</th>
+        <th>Annual Revenue</th>
+        <th>No of Employees</th>
+      </tr>
       {% for account in accounts %}
       <tr>
-       <td> {{ account.Name }} </td><td>{{account.AnnualRevenue}}</td><td>{{account.NumberOfEmployees}}</td>
-       </tr>
+        <td>{{ account.Name }}</td>
+        <td>{{account.AnnualRevenue}}</td>
+        <td>{{account.NumberOfEmployees}}</td>
+      </tr>
       {% endfor %}
-    </ul>
-
-
+    </table>
   </body>
 </html>

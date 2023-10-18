@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Results</title>
+  </head>
+  <head>
     <title>Linear Regression Results</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Linear Regression Results</h1>
     <p>Mean Squared Error: {{ mse }}</p>
     <p>R-squared: {{ r2 }}</p>
-</body>
+  </body>
 </html>
-
