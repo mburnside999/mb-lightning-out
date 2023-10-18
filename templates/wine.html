@@ -21,10 +21,21 @@
     <table>
       <tr>
         <th>Name</th>
-        <th>Alcohol</th>
+        <th>Alcohol%</th>
         <th>Chlorides</th>
+        <th>Citric Acid</th>
+        <th>Density</th>
+        <th>Fixed Acidity</th>
+        <th>Free S02</th>
+        <th>pH</th>
+        <th>Resid. Sugar</th>
+        <th>Sulphates</th>
+        <th>Total S02</th>
+        <th>Vol Acidity</th>
+
+        {% for wine in wines %}
       </tr>
-      {% for wine in wines %}
+
       <tr>
         <td>{{wine.Name }}</td>
         <td>{{wine.alcohol__c}}</td>
