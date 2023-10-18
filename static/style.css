@@ -1,5 +1,35 @@
-/* style.css */
-body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+/* Define styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+/* Style the table header */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+    padding: 8px;
+}
+
+/* Style the table rows */
+tr {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternate row background color */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect on rows */
+tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Style table cell padding and text alignment */
+td, th {
+    padding: 8px;
+    text-align: left;
 }
