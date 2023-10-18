@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Salesforce wines</title>
+  </head>
+  <body>
+    <h1>Salesforce wines</h1>
+    <!-- <ul>
+      {% for wine in wines %}
+      <li>
+        {{ wine.Name }} {{wine.AnnualRevenue}}
+        {{wine.NumberOfEmployees}}
+      </li>
+      {% endfor %}
+    </ul> -->
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Alcohol</th>
+        <th>Chlorides</th>
+      </tr>
+      {% for wine in wines %}
+      <tr>
+        <td>{{wine.Name }}</td>
+        <td>{{wine.alcohol__c}}</td>
+        <td>{{wine.chlorides__c}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

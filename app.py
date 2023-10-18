@@ -28,12 +28,12 @@ sf = Salesforce(username=SALESFORCE_USERNAME, password=SALESFORCE_PASSWORD, secu
 loaded_model = load('wines_model.joblib')
 
 @app.route('/')  
-def list_accounts():
-    # Query Salesforce for a list of accounts
-    query = "SELECT Id, Name,AnnualRevenue, NumberOfEmployees FROM Account"
-    accounts = sf.query_all(query)['records']
+def list_wines():
+    # Query Salesforce for a list of wines
+    query = "SELECT Id, Name,alcohol__c,chlorides__c,citric_acid__c,density__c,fixed_acidity__c,free_sulfur_dioxide__c	FROM Wines__c"
+    wines = sf.query_all(query)['records']
 
-    return render_template('account.html', accounts=accounts)
+    return render_template('wine.html', wines=wines)
 
 @app.route('/wines', methods=['POST'])  
 
@@ -78,7 +78,7 @@ def predict_wines():
 @app.route('/linear_regression')
 def linear_regression():
     # Query Salesforce for data
-    query = "SELECT AnnualRevenue, NumberOfEmployees FROM Account WHERE AnnualRevenue !=NULL AND NumberOfEmployees !=NULL"
+    query = "SELECT AnnualRevenue, NumberOfEmployees FROM wine WHERE AnnualRevenue !=NULL AND NumberOfEmployees !=NULL"
     results = sf.query_all(query)['records']
 
 # Convert data to a Pandas DataFrame
