@@ -31,7 +31,7 @@ loaded_model = load('wines_model.joblib')
 @app.route('/')  
 def list_wines():
     # Query Salesforce for a list of wines
-    query = "SELECT Id, Name,alcohol__c,chlorides__c,citric_acid__c,density__c,fixed_acidity__c,free_sulfur_dioxide__c,pH__c,residual_sugar__c,sulphates__c,total_sulfur_dioxide__c,volatile_acidity__c	FROM Wines__c orderby Name"
+    query = "SELECT Id, Name,alcohol__c,chlorides__c,citric_acid__c,density__c,fixed_acidity__c,free_sulfur_dioxide__c,pH__c,residual_sugar__c,sulphates__c,total_sulfur_dioxide__c,volatile_acidity__c	FROM Wines__c order by Name"
     wines = sf.query_all(query)['records']
 
     return render_template('wine.html', wines=wines)
