@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify,render_template
 from simple_salesforce import Salesforce
 import pandas as pd
+import os
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
@@ -113,6 +114,6 @@ def linear_regression():
     return render_template('results.html', mse=mse, r2=r2)
 
 
-
+port = int(os.environ.get('PORT', 5002))
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=port, debug=True)
