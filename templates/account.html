@@ -5,13 +5,24 @@
   </head>
   <body>
     <h1>Salesforce Accounts</h1>
-    <ul>
+    <h1>Salesforce Accounts</h1>
+    <!-- <ul>
       {% for account in accounts %}
       <li>
         {{ account.Name }} {{account.AnnualRevenue}}
         {{account.NumberOfEmployees}}
       </li>
       {% endfor %}
+    </ul> -->
+    <table>
+     <tr><th>Account Name</th><th>AnnualRev</th><th>No of Employees</th></tr>
+      {% for account in accounts %}
+      <tr>
+       <td> {{ account.Name }} </td><td>{{account.AnnualRevenue}}</td><td>{{account.NumberOfEmployees}}</td>
+       </tr>
+      {% endfor %}
     </ul>
+
+
   </body>
 </html>
