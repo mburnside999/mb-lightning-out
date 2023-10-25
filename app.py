@@ -37,23 +37,21 @@ def list_wines():
     return render_template('wine.html', wines=wines)
 
 @app.route('/consent')  
-def show_pc():
+def show_consent():
     print ('in /consent')
     return render_template('consent.html')
 
 @app.route('/channelconsent') 
-def show_pc():
+def show_channelconsent():
     print ('in /channelconsent')
     return render_template('channelconsent.html')
 
 @app.route('/detailedconsent')  
-def show_pc():
+def show_detailedconsent():
     print ('in /detailedconsent')
     return render_template('detailedconsent.html')
 
-
 @app.route('/wines', methods=['POST'])  
-
 def predict_wines():
     data=request.get_json()
     fixed_acidity__c=(data.get('fixed_acidity__c'))
