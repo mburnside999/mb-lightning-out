@@ -51,6 +51,12 @@ def show_detailedconsent():
     print ('in /detailedconsent')
     return render_template('detailedconsent.html')
 
+@app.route('/individualconsent')  
+def show_detailedconsent():
+    print ('in /individualconsent')
+    return render_template('individualconsent.html')
+
+
 @app.route('/wines', methods=['POST'])  
 def predict_wines():
     data=request.get_json()
