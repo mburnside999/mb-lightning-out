@@ -36,6 +36,13 @@ def list_wines():
 
     return render_template('wine.html', wines=wines)
 
+@app.route('/pc')  
+def show_pc():
+    # Query Salesforce for a list of wines
+    print ('in /pc')
+    return render_template('pc.html')
+
+
 @app.route('/wines', methods=['POST'])  
 
 def predict_wines():
