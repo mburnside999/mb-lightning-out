@@ -52,7 +52,7 @@ def show_detailedconsent():
     return render_template('detailedconsent.html')
 
 @app.route('/individualconsent')  
-def show_detailedconsent():
+def show_individualconsent():
     print ('in /individualconsent')
     return render_template('individualconsent.html')
 
