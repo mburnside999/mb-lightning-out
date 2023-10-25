@@ -36,10 +36,20 @@ def list_wines():
 
     return render_template('wine.html', wines=wines)
 
-@app.route('/pc')  
+@app.route('/consent')  
 def show_pc():
-    print ('in /pc')
-    return render_template('pc.html')
+    print ('in /consent')
+    return render_template('consent.html')
+
+@app.route('/channelconsent') 
+def show_pc():
+    print ('in /channelconsent')
+    return render_template('channelconsent.html')
+
+@app.route('/detailedconsent')  
+def show_pc():
+    print ('in /detailedconsent')
+    return render_template('detailedconsent.html')
 
 
 @app.route('/wines', methods=['POST'])  
