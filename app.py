@@ -38,7 +38,6 @@ def list_wines():
 
 @app.route('/pc')  
 def show_pc():
-    # Query Salesforce for a list of wines
     print ('in /pc')
     return render_template('pc.html')
 
