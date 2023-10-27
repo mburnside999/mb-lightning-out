@@ -29,6 +29,7 @@ sf = Salesforce(username=SALESFORCE_USERNAME, password=SALESFORCE_PASSWORD, secu
 
 # Load the model later for predictions
 loaded_model = load('wines_model.joblib')
+print (loaded_model)
 
 @app.route('/')  
 def list_wines():
@@ -101,7 +102,7 @@ def predict_wines():
 @app.route('/linear_regression')
 def linear_regression():
     # Query Salesforce for data
-    query = "SELECT AnnualRevenue, NumberOfEmployees FROM wine WHERE AnnualRevenue !=NULL AND NumberOfEmployees !=NULL"
+    query = "SELECT AnnualRevenue, NumberOfEmployees FROM Account WHERE AnnualRevenue !=NULL AND NumberOfEmployees !=NULL"
     results = sf.query_all(query)['records']
 
 # Convert data to a Pandas DataFrame
