@@ -28,7 +28,7 @@ app = Flask(__name__)
 sf = Salesforce(username=SALESFORCE_USERNAME, password=SALESFORCE_PASSWORD, security_token=SALESFORCE_SECURITY_TOKEN)
 
 # Load the model later for predictions
-loaded_model = load('wines_model.joblib')
+loaded_model = load('wines_model310.joblib')
 print (loaded_model)
 
 @app.route('/')  
