@@ -65,13 +65,8 @@ def predict_wines():
 
     prediction = loaded_model.predict(input_data_reshaped)
     print(prediction)
-
-    if (prediction[0]==1):
-        result='Good Quality Wine';
-        print (result)
-    else:
-        result='Bad Quality Wine';
-        print (result)
+    result=prediction[0]
+    print (result)
         
     return jsonify({'result':result})
 
