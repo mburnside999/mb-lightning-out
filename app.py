@@ -29,8 +29,8 @@ app = Flask(__name__)
 
 print ('connecting')
 # Connect to Salesforce
-# sf =Salesforce(username=SALESFORCE_USERNAME, password=SALESFORCE_PASSWORD, security_token=SALESFORCE_SECURITY_TOKEN)
-sf =Salesforce(username='mburnside@cta5.demo', password='salesforce123', security_token=SALESFORCE_SECURITY_TOKEN)
+sf =Salesforce(username=SALESFORCE_USERNAME, password=SALESFORCE_PASSWORD, security_token=SALESFORCE_SECURITY_TOKEN)
+#sf =Salesforce(username='mburnside@cta5.demo', password='salesforce123', security_token=SALESFORCE_SECURITY_TOKEN)
 
 print (sf)
 accesstoken=sf.session_id
@@ -40,6 +40,10 @@ loaded_model = load('wines_model310.joblib')
 print (loaded_model)
 
 @app.route('/')  
+def start():
+    return render_template('start.html')
+
+@app.route('/winelist')  
 def list_wines():
     # Query Salesforce for a list of wines
     query = "SELECT Id, Name,alcohol__c,chlorides__c,citric_acid__c,density__c,fixed_acidity__c,free_sulfur_dioxide__c,pH__c,residual_sugar__c,sulphates__c,total_sulfur_dioxide__c,volatile_acidity__c,quality__c FROM Wines__c order by Name"
