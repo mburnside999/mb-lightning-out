@@ -4,9 +4,14 @@
   $Lightning.use(
     "c:LightningOutDemo",
     function () {
-      $Lightning.createComponent("c:lwcCmp", {}, document.body, function (cmp) {
-        console.log("callback");
-      });
+      $Lightning.createComponent(
+        "c:lwcCmp",
+        { msg: "Hello from Python" },
+        document.body,
+        function (cmp) {
+          console.log("callback");
+        }
+      );
     },
     "https://ctademo5.lightning.force.com",
     token
