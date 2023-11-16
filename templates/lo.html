@@ -1,0 +1,14 @@
+<script src="https://ctademo5.my.salesforce.com/lightning/lightning.out.js"></script>
+<script type="text/javascript">
+  var token = "{{ token }}";
+  $Lightning.use(
+    "LightningOutDemoApp",
+    function () {
+      $Lightning.createComponent("c:lwcCmp", {}, document.body, function (cmp) {
+        console.log("callback");
+      });
+    },
+    "https://ctademo5.lightning.force.com",
+    token
+  );
+</script>

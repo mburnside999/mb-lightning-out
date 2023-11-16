@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify,render_template
-from simple_salesforce import Salesforce
+from simple_salesforce import Salesforce,SalesforceLogin
 import pandas as pd
 import os
 from sklearn.linear_model import LinearRegression
@@ -27,11 +27,14 @@ SALESFORCE_CLIENT_SECRET = '0BED54F5CC3E4B25160AF24AB3137D272C017BB6DC4135AA54F0
 
 app = Flask(__name__)
 
-
 print ('connecting')
 # Connect to Salesforce
-sf = Salesforce(username=SALESFORCE_USERNAME, password=SALESFORCE_PASSWORD, security_token=SALESFORCE_SECURITY_TOKEN)
-print ('connected')
+# sf =Salesforce(username=SALESFORCE_USERNAME, password=SALESFORCE_PASSWORD, security_token=SALESFORCE_SECURITY_TOKEN)
+sf =Salesforce(username='mburnside@cta5.demo', password='salesforce123', security_token=SALESFORCE_SECURITY_TOKEN)
+
+print (sf)
+accesstoken=sf.session_id
+print ('you are connected')
 # Load the model later for predictions
 loaded_model = load('wines_model310.joblib')
 print (loaded_model)
@@ -58,6 +61,12 @@ def list_wines():
     img.seek(0)
     plot_url = base64.b64encode(img.getvalue()).decode('utf8')
     return render_template('wine.html',plot_url=plot_url,wines=wines)
+
+@app.route('/token')  
+def tokens():
+    # Query Salesforce for a list of wines
+    
+    return render_template('lo.html',token=accesstoken)
 
 
 @app.route('/plot')
