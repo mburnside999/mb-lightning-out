@@ -43,13 +43,13 @@ def start():
     return render_template('start.html')
 
 @app.route('/ebikesflow')  
-def tokens():
+def flow():
     # test lightning out
     return render_template('ebikesflow.html',token=accesstoken)
 
 
 @app.route('/lodemo')  
-def tokens():
+def lwc():
     # test lightning out
     return render_template('lodemo.html',token=accesstoken)
 
