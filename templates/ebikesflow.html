@@ -13,7 +13,9 @@
       function () {
         $Lightning.createComponent(
           "c:FlowTest",
-          { msg: "Hello from Python" },
+          {
+            msg: "You are viewing Lightning Out - Hello from a Python Flask app!",
+          },
           document.body,
           function (cmp) {
             console.log("callback");
