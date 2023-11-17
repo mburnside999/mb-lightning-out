@@ -29,7 +29,7 @@ app = Flask(__name__)
 
 print ('connecting')
 # Connect to Salesforce
-sf =Salesforce(username='mburnside@cta5.demo', password='salesforce123', security_token=SALESFORCE_SECURITY_TOKEN)
+sf =Salesforce(username=SALESFORCE_USERNAME, password=SALESFORCE_PASSWORD, security_token=SALESFORCE_SECURITY_TOKEN)
 
 print (sf)
 accesstoken=sf.session_id
