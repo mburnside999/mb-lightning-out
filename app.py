@@ -42,11 +42,15 @@ print (loaded_model)
 def start():
     return render_template('start.html')
 
+@app.route('/ebikesflow')  
+def tokens():
+    # test lightning out
+    return render_template('ebikesflow.html',token=accesstoken)
+
 
 @app.route('/lodemo')  
 def tokens():
     # test lightning out
-    
     return render_template('lodemo.html',token=accesstoken)
 
 

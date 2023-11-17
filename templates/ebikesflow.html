@@ -12,9 +12,9 @@
       "c:LightningOutDemo",
       function () {
         $Lightning.createComponent(
-          "c:lwcCmp",
+          "c:FlowTest",
           { msg: "Hello from Python" },
-          "div1",
+          document.body,
           function (cmp) {
             console.log("callback");
           }
@@ -26,6 +26,5 @@
   </script>
 </head>
 <body>
-  <h1>Lightning Out - LWC</h1>
-  <div id="div1"></div>
+  <h1>Lightning Out - Flow</h1>
 </body>
