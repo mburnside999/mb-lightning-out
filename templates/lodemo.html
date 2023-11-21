@@ -13,7 +13,9 @@
       function () {
         $Lightning.createComponent(
           "c:lwcCmp",
-          msg: "You are viewing Lightning Out - Hello from a Python Flask app!",
+          {
+            msg: "You are viewing Lightning Out - Hello from a Python Flask app!",
+          },
           "div1",
           function (cmp) {
             console.log("callback");
