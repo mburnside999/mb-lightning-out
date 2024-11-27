@@ -47,14 +47,10 @@ def flow():
     # test lightning out
     return render_template('ebikesflow.html',token=accesstoken)
 
-
 @app.route('/lodemo')  
 def lwc():
     # test lightning out
     return render_template('lodemo.html',token=accesstoken)
-
-
-
 
 port = int(os.environ.get('PORT', 5002))
 if __name__ == '__main__':
