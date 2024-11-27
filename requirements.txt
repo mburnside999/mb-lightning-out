@@ -141,7 +141,7 @@ prompt-toolkit==3.0.39
 psutil==5.9.6
 psycopg==3.1.9
 ptyprocess==0.7.0
-pure-eval==0.2.2
+pure-eval==0.2.3
 pycaret==3.1.0
 pycparser==2.21
 pydantic==2.4.2
