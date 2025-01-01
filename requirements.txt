@@ -66,7 +66,7 @@ imageio==2.31.6
 imbalanced-learn==0.11.0
 importlib-metadata==6.8.0
 iniconfig==2.0.0
-interpret==0.4.4
+interpret==0.6.8
 interpret-core==0.4.4
 ipykernel==6.26.0
 ipython==8.17.2
